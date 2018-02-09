@@ -1,0 +1,37 @@
+spring:
+  profiles:
+    active : local
+---
+#server configuration
+#spring:
+#  profiles: production
+#
+#server:
+#   port:
+#   address:
+---
+#local postgres configuration
+spring:
+  profiles: local
+
+server:
+  port: 8085
+  address: localhost
+---
+# Database
+db:
+  driver: org.postgresql.Driver
+  link: jdbc:postgresql://localhost:5432/blankproject
+  username: postgres
+  password: postgres
+
+# Hibernate
+hibernate:
+  dialect: org.hibernate.dialect.PostgreSQLDialect
+  show_sql: false
+  format_sql: true
+  use_sql_comments: true
+  hbm2ddl.auto: false
+
+entitymanager:
+  packagesToScan: com.blankproject
